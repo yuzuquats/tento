@@ -1,0 +1,11 @@
+# Generated: build-time paths the exported crates read.
+
+[env]
+DENO_CONFIG = { value = "deno.json", relative = true }
+TENTO_CHRONO_JS = { value = "tento-chrono/chrono", relative = true }
+RECURRENCE_TEST_DATA = { value = "tento-chrono/tests/google_recurrence_test_data", relative = true }
+ZSTD_SYS_USE_BUNDLED = "1"
+RUSTC_WRAPPER = ""
+
+[build]
+rustc-wrapper = ""

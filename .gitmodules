@@ -1,0 +1,3 @@
+[submodule "tento-chrono"]
+	path = tento-chrono
+	url = https://github.com/yuzuquats/tento-chrono

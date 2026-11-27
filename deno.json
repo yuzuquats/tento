@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.7",
+    "@tento/chrono": "./tento-chrono/chrono/mod.ts"
+  }
+}

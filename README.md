@@ -9,14 +9,31 @@ The workspace contains [`tento-env`](tento-env), the runtime facade, and
 Applications depend on `tento-env`, which re-exports `env_kv!` and
 `#[derive(FromEnv)]`.
 
+The workspace also includes [Tento Chrono](tento-chrono), which provides
+Rust and TypeScript calendar arithmetic, recurrence rules, and date ranges.
+Its bindings package builds the TypeScript modules for tests in Boa.
+
 ## Build and test
 
-Run these commands from the repository root with a current stable Rust toolchain.
+Clone recursively to fetch Chrono at the recorded revision. Install Deno
+and the pinned Rust nightly for the full workspace:
 
 ```sh
-cargo test --workspace --locked
-cargo check --workspace --all-targets --locked
+git clone --recurse-submodules https://github.com/yuzuquats/tento.git
+cd tento
+(cd tento-chrono/bindings && deno cache --frozen build.deno.ts)
+cargo +nightly-2026-06-24 test --workspace --locked
+cargo +nightly-2026-06-24 check --workspace --all-targets --locked
 ```
+
+The Env crates also support stable Rust. To work on them independently:
+
+```sh
+cargo +stable test -p tento-env -p tento-env-macros --locked
+```
+
+See the [Chrono guide](tento-chrono/README.md) for the TypeScript API and
+its Deno tests.
 
 ## Load a setting
 
