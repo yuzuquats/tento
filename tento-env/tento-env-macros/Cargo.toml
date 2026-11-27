@@ -1,0 +1,16 @@
+[package]
+name = "tento-env-macros"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+readme = "README.md"
+description = "Procedural macros for typed tento-env configuration"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro-crate = "3"
+proc-macro2.workspace = true
+quote.workspace = true
+syn.workspace = true
